@@ -1,0 +1,7 @@
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.csproj.AssemblyReference.cache
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.Form1.resources
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.csproj.GenerateResource.cache
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.AssemblyInfoInputs.cache
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.AssemblyInfo.cs
+C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\obj\Release\net6.0-windows\SGMS.App.Report.csproj.CoreCompileInputs.cache

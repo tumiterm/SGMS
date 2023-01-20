@@ -1,0 +1,172 @@
+﻿@model dynamic
+@using SGMS.Enums
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .card-header, .head {
+        background-color: #5bc1ac;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+
+    .vs {
+        margin-left: 240px;
+    }
+</style>
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-futbol me-1 text-white"></i>
+            <span class="text-white">Forek Kasi Board</span>
+        </div>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form asp-action="LogSystemUser">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label class="control-label">User Name</label>
+                                    <input name="Name" class="form-control" />
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label class="control-label">User Surname</label>
+                                    <input name="LastName" class="form-control" />
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label class="control-label">Cellphone</label>
+                                    <input name="Phone" class="form-control" />
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label class="control-label">User Role</label>
+                                    <select name="Role" class="form-control role" asp-items="@Html.GetEnumSelectList<eTask>()">
+                                        <option selected="selected" value="">Select Memeber Role</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group mt-2 col-md-12" style="background-color:whitesmoke;">
+                                <button type="submit" class="btn btn-success save"><i class="fa fa-save"></i> Save</button>
+                                <button type="reset" class="btn btn-outline-warning"><i class="fa fa-undo"></i> Reset</button>
+                                <button type="button" class="btn btn-outline-danger float-end"><i class="fa fa-window-close"></i> Exit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-futbol me-1 text-white"></i>
+            <span class="text-white">Forek Kasi Games Board</span>
+        </div>
+
+        <div class="card-body">
+            <table class="table mr-5 ml-5 table-striped" id="datatablesSimple">
+                <thead class="head">
+                    <tr>
+                        <th class="text-white">
+                            Name
+                        </th>
+
+                        <th class="text-white">
+                            Surname
+                        </th>
+
+                        <th class="text-white">
+                            Phone
+                        </th>
+
+                        <th class="text-white">
+                            Position
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (SysUsers users in Model.UserList)
+                    {
+                        <tr>
+                            <td>
+                                @users.Name
+                            </td>
+
+                            <td>
+                                @users.LastName
+                            </td>
+
+                            <td>
+                                @users.Phone
+                            </td>
+
+                            <td>
+                                @users.Role
+                            </td>
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('.role').select2();
+
+    });
+</script>

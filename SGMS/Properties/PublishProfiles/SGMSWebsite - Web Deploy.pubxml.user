@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAUqfHjE7BeEud0A9pFo4E9AAAAAACAAAAAAAQZgAAAAEAACAAAAAVcVGBbo5Kf2DN1rs0hQM8AfSeFXW6G9CxW0K32CGK2gAAAAAOgAAAAAIAACAAAAAt3zjTngkclSTr1JWMVNSXAxNsUm2k4Ot6RFled24D9YAAAAAYW4Aq6Mo8NgqqKJFgeg67CAYJ7Pf+WDdOSyumA7+AEE58j0IDIVjabs1Za6LDKWqsdRr2YrfsFej5hVnLAvS7gt3DViBl+uL5j4q6Q/ZN4Oek45+rsdp/uyTm9t4+AiZdQf6nJngDkOGOkEGaanK2Lns3xuIHthujyu081hHN00AAAABKpEDcVocmdAQsR/zyPM+VNZcvvGkyqqkTSzkwv5hN8uTDc8G6jtoKu9zcy5VeCOSndPiJ+S1azNwwmsdb08Z1</EncryptedPassword>
+    <History>True|2022-12-31T17:04:13.4595473Z;True|2022-12-30T09:16:50.1184425+02:00;True|2022-12-09T05:31:20.7512624+02:00;True|2022-12-05T12:25:41.5452811+02:00;False|2022-12-05T12:20:30.7963130+02:00;True|2022-12-03T09:08:47.9677605+02:00;False|2022-12-03T09:05:37.4686516+02:00;True|2022-12-02T11:09:04.4661866+02:00;True|2022-12-01T19:23:24.7956533+02:00;False|2022-12-01T18:53:45.3950974+02:00;False|2022-12-01T16:03:03.9194433+02:00;True|2022-12-01T14:22:40.2676436+02:00;True|2022-12-01T14:17:27.8819885+02:00;True|2022-12-01T14:04:22.7435697+02:00;False|2022-12-01T13:55:06.4646798+02:00;True|2022-12-01T13:46:17.8330626+02:00;True|2022-12-01T13:22:18.7847080+02:00;False|2022-12-01T13:10:17.2923952+02:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:sgmsserver.database.windows.net,1433%3bInitial Catalog=sgms_db%3bPersist Security Info=False%3bUser ID=admin-sql%3bPassword=F0rekK%405iG%40mes2022%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

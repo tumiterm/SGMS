@@ -1,0 +1,209 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Soccer Games</title>
+
+    <link href="~/Theme/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="~/Theme/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="~/Theme/css/templatemo-kind-heart-charity.css" rel="stylesheet">
+   
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body id="section_1">
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+                        Factory 107 Kabokweni, Industrial
+                    </p>
+
+                    <p class="d-flex mb-0">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="mailto:info@ekasigames.com">
+                            info@ekasigames.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+                        <li class="social-icon-item">
+                            <a href="https://twitter.com/forekinstitute" class="social-icon-link bi-twitter"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.facebook.com/ForekInstitute" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.instagram.com/forekinstituteoftechnology/" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.youtube.com/@@forekinstituteoftechnology2257" class="social-icon-link bi-youtube"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.forek.co.za" class="social-icon-link bi-globe"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home">
+                <img src="~/Theme/images/Logo2.png" class="logo img-fluid" alt="Kind Heart Charity">
+                <span>
+                    Soccer Games Management
+                    <small>Powered By Forek ICT Services</small>
+                </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    @if(User.IsInRole("Admin") || User.IsInRole("Coach") || User.IsInRole("Referee"))
+                    {
+                      <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="OnAddTeam" asp-controller="Team">Teams</a>
+                    </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="OnGetAllPlayers" asp-controller="Player">Players</a>
+                    </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="RegisteredCoaches" asp-controller="Coach">Coaches</a>
+                    </li>
+
+
+                     <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="RegisteredRefs" asp-controller="Referee">Referee</a>
+                    </li>
+
+                    }
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="ScheduleMatch" asp-controller="Match">Match</a>
+                    </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="RetrieveUsers" asp-controller="Auth">Users</a>
+                    </li>
+
+                    }
+
+                     <li class="nav-item">
+                        <a class="nav-link click-scroll" asp-action="Fixtures" asp-controller="PlayerSelection">Fixtures</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn" asp-action="Logout" asp-controller="Auth">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row mt-1">                
+                
+                       @RenderBody()
+                </div>
+            </div>
+        </section>
+    </main>
+
+ 
+
+
+        <div class="site-footer-bottom mt-3">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <p class="copyright-text mb-0">Copyright © 2022 <a href="#">FIT</a> 
+                            Powered By Forek ICT Services
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-linkedin"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://youtube.com/templatemo" class="social-icon-link bi-youtube"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    <script src="~/Theme/js/bootstrap.min.js"></script>
+    <script src="~/Theme/js/jquery.sticky.js"></script>
+    <script src="~/Theme/js/click-scroll.js"></script>
+    <script src="~/Theme/js/counter.js"></script>
+    <script src="~/Theme/js/custom.js"></script>
+
+
+</body>
+
+ <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+ <script src="~/js/datatables-simple-demo.js"></script>
+
+
+    @await Component.InvokeAsync("Notyf");
+    @await RenderSectionAsync("Scripts", required: false)
+
+</html>

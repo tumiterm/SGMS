@@ -1,0 +1,107 @@
+﻿@model IEnumerable<SGMS.Models.Match>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstTeamId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondTeamId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefereeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Score1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Score2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstTeamId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondTeamId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RefereeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MatchId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MatchId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MatchId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,95 @@
+﻿@model SGMS.Models.Team
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .card-header, .head {
+        background-color: #5bc1ac;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+
+    .vs {
+        margin-left: 240px;
+    }
+</style>
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-futbol me-1 text-white"></i>
+            <span class="text-white">Team & Registered Player List</span>
+        </div>
+        <div class="card-body">
+
+            <a class="mb-2 text-danger" asp-action="DownloadReport" asp-controller="Team" asp-route-TeamId="@Model.TeamId"><i class="fa fa-download"></i> Team Sheet</a>
+            <div class="alert alert-danger mb-2" role="alert" style="border-bottom-color:darkred; border-bottom-width:3px">
+              @ViewData["Team"] Player List
+            </div>
+              <table class="table" id="datatablesSimple">
+                <thead style="background-color:#5bc1ac">
+                    <tr>
+                        <th>
+                            Action
+                        </th>
+                        <th class="text-white">Player Name</th>
+                        <th class="text-white">Player Surname</th>
+                        <th class="text-white">ID Number</th>
+                        <th class="text-white">Phone</th>
+                        <th class="text-white">Position</th>
+                        <th class="text-white">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewData["List"] as IEnumerable<Player>)
+                    {
+                        <tr>
+                            <td>
+                                <a class="text-primary" asp-action="OnModifyPlayer" asp-controller="Player" asp-route-PlayerId="@item.PlayerId">Open</a>
+                            </td>
+                            <td>@item.PlayerName</td>
+                            <td>@item.PlayerLastName</td>
+                            <td>@item.IDNumber</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Position</td>
+                            <td>
+                                <a class="text-primary" asp-action="OnViewPlayerProfile" asp-controller="Player" asp-route-PlayerId="@item.PlayerId"><i class="fa fa-eye"></i> View</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

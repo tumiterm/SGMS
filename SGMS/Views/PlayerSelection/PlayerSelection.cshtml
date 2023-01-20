@@ -1,0 +1,201 @@
+﻿@model dynamic
+@using SGMS.Enums
+
+@{
+    ViewData["Title"] = "Selection";
+}
+
+
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .card-header, .head {
+        background-color: #5bc1ac;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+
+    .vs {
+        margin-left: 240px;
+    }
+</style>
+
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-futbol me-1 text-white"></i>
+            <span class="text-white">Select Players for Match:<span class="text-bold"> [@ViewData["MatchGames"]]</span></span>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form asp-action="PlayerSelection">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group" hidden>
+                            <label class="control-label">Match</label>
+                            @Html.TextBox("MatchId", ViewData["MatchId"], new { htmlAttributes = new { @class = "form-control", @id = "MatchId", @required = "required", @name = "MatchId" } })
+                            @Html.TextBox("FirstTeamId", ViewData["FirstTeamId"], new { htmlAttributes = new { @class = "form-control", @id = "FirstTeamId", @required = "required", @name = "FirstTeamId" } })
+                            @Html.TextBox("SecondTeamId", ViewData["SecondTeamId"], new { htmlAttributes = new { @class = "form-control", @id = "SecondTeamId", @required = "required", @name = "SecondTeamId" } })
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Team </label>
+                                <select name="TeamId" class="form-control team" asp-items="@ViewBag.TeamId">
+                                    <option selected="selected" value="">Select Team </option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Player</label>
+                                <select name="PLayerId" class="form-control player" asp-items="@ViewBag.PLayerId">
+                                    <option selected="selected" value="">Select Player </option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label class="control-label">Position</label>
+                                <select name="Position" class="form-control position" asp-items="@Html.GetEnumSelectList<ePosition>()">
+                                    <option selected="selected" value="">Select Player Position</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label class="control-label">Player Number</label>
+                                <input name="Number" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label class="control-label">Player Status</label>
+                                <select name="IsSubstitute" class="form-control Substitute" asp-items="@Html.GetEnumSelectList<eChoice>()">
+                                    <option selected="selected" value="">Select Option</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-2 col-md-12" style="background-color:whitesmoke;">
+                            <button type="submit" class="btn btn-success save"><i class="fa fa-save"></i> Save</button>
+                            <button type="reset" class="btn btn-outline-warning"><i class="fa fa-undo"></i> Reset</button>
+                            <button type="button" class="btn btn-outline-danger float-end"><i class="fa fa-window-close"></i> Exit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-futbol me-1 text-white"></i>
+            <span class="text-white">Players selected for Match: [@ViewData["MatchGames"]]</span>
+        </div>
+
+        <div class="card-body">
+            <table class="table mr-5 ml-5 table-striped" id="datatablesSimple">
+                <thead class="head">
+                    <tr>
+                        <th class="text-white">
+                            Details
+                        </th>
+
+                        <th class="text-white">
+                            Jersey Number
+                        </th>
+
+                        <th class="text-white">
+                            Position
+                        </th>
+
+                        <th class="text-white">
+                            Player Status
+                        </th>
+                        <th class="text-white">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    
+
+                    @foreach (PlayerSelection selection in Model.Fixtures)
+                    {
+                        <tr>
+                            <td>
+                               <a class="text-primary" href="@Url.Action("OnViewPlayerProfile", "Player",new {PlayerId = selection.PLayerId})"><i class="fa fa-eye"></i> View</a>
+
+                            </td>
+                               
+                            <td>
+                                @selection.Number
+                            </td>
+
+                            <td>
+                                @selection.Position
+                            </td>
+
+                            <td>
+                                @selection.IsSubstitute
+                            </td>
+
+                            <td>
+                                <a class="text-danger" href="@Url.Action("RemoveSelection", "PlayerSelection",new {SelectionId = selection.Id})"> Remove</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('.team,.player,.position,.Substitute').select2();
+
+    });
+</script>
+

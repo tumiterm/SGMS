@@ -1,0 +1,281 @@
+﻿@model SGMS.DTO.TournamentSponsor
+@using SGMS.Enums
+
+@{
+    ViewData["Title"] = "OnRegisterTournament";
+}
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .card-header, .head {
+        background-color: #5bc1ac;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: #5bc1ac;
+    }
+</style>
+
+
+<div class="col-md-4 float-end" mt-3 mb-3>
+    <a asp-action="OnGetTournaments" class="text-danger"><i class="fa fa-eye"></i> View Tournaments</a>
+</div>
+<br />
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-file me-1 text-white"></i>
+            <span class="text-white">Register a tournament</span>
+        </div>
+
+        <div class="card-body">
+            <div class="col-md-12">
+                <form asp-action="OnRegisterTournament">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row tournament">
+                        <div class="form-group col-md-4">
+                            <label asp-for="TournamentName" class="control-label"></label>
+                            <input asp-for="TournamentName" class="form-control" />
+                            <span asp-validation-for="TournamentName" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="From" class="control-label"></label>
+                            <input asp-for="From" class="form-control" />
+                            <span asp-validation-for="From" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Till" class="control-label"></label>
+                            <input asp-for="Till" class="form-control" />
+                            <span asp-validation-for="Till" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="CutOffDate" class="control-label"></label>
+                            <input asp-for="CutOffDate" class="form-control" />
+                            <span asp-validation-for="CutOffDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Type" class="control-label"></label>
+                            <select asp-for="Type" class="form-control type" asp-items="Html.GetEnumSelectList<eTournamentType>()">
+                                <option selected="selected" value="">Select Tournament Type</option>
+                            </select>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Cycle" class="control-label"></label>
+                            <select asp-for="Cycle" class="form-control cycle" asp-items="Html.GetEnumSelectList<eTournamentCycle>()">
+                                <option selected="selected" value="">Select Tournament Cycle</option>
+                            </select>
+                            <span asp-validation-for="Cycle" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-check mt-1 wPrice">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="chkPrice" style="background-color:#5bc1ac" asp-for="HasPrice" /> @Html.DisplayNameFor(model => model.HasPrice)
+                        </label>
+                    </div>
+
+                    <div class="form-group form-checkm mt-1 affiliation">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="chkAffiliation" style="background-color:#5bc1ac" asp-for="HasAffiliationFee" /> @Html.DisplayNameFor(model => model.HasAffiliationFee)
+                        </label>
+                    </div>
+
+                    <div class="form-group form-checkm mt-1">
+                        <label class="form-check-label">
+                            <input class="form-check-input" id="sponsor" style="background-color:#5bc1ac" asp-for="HasSponsor" /> @Html.DisplayNameFor(model => model.HasSponsor)
+                        </label>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-4 PriceHeader">
+                            <label asp-for="Price1" class="control-label"></label>
+                            <input asp-for="Price1" class="form-control Price1" />
+                            <span asp-validation-for="Price1" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4 PriceHeader">
+                            <label asp-for="Price2" class="control-label"></label>
+                            <input asp-for="Price2" class="form-control" />
+                            <span asp-validation-for="Price2" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4 AffFee">
+                            <label asp-for="AffiliationFee" class="control-label"></label>
+                            <input asp-for="AffiliationFee" class="form-control" />
+                            <span asp-validation-for="AffiliationFee" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row header2">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Title" class="control-label"></label>
+                            <select asp-for="Title" class="form-control type" asp-items="Html.GetEnumSelectList<eTitle>()">
+                                <option selected="selected" value="">Select Sponsor Title</option>
+                            </select>
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Email" class="control-label"></label>
+                            <div class="input-group flex-nowrap form-group col-md-3">
+                                <span class="input-group-text" id="addon-wrapping">@@</span>
+                                <input asp-for="Email" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                            </div>
+
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group mt-4" style="background-color:whitesmoke;">
+                        <button type="submit" class="btn btn-success save"><i class="fa fa-save"></i> Save</button>
+                        <button type="button" class="btn btn-secondary next"><i class="fa fa-arrow-right"></i> Next</button>
+                        <button type="button" class="btn btn-outline-primary back"><i class="fa fa-arrow-left"></i> Back</button>
+                        <button type="reset" class="btn btn-outline-warning"><i class="fa fa-undo"></i> Reset</button>
+                        <button type="button" class="btn btn-outline-danger float-end"><i class="fa fa-window-close"></i> Exit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('.type,.cycle').select2();
+
+        $('.header2,.AffFee,.next,.PriceHeader,.back').hide();
+
+           $("#chkPrice").on("click", function () {
+
+                    if (this.checked) {
+
+                         $('.Price1').show();
+                         $('.PriceHeader').show();
+
+                    }else{
+
+                         $('.Price1').hide();
+
+                         $('.PriceHeader').hide();
+                    }
+           });
+
+           $("#chkAffiliation").on("click", function () {
+
+                    if (this.checked) {
+
+                         $('.AffFee').show();
+
+                    }else{
+
+                          $('.AffFee').hide();
+                    }
+           });
+
+           $("#sponsor").on("click", function () {
+
+                    if (this.checked) {
+
+                         $('.next').show();
+
+                         $('.save').hide();
+
+                    }else{
+
+                         $('.next').hide();
+
+                         $('.save').show();
+                    }
+        });
+
+         $(".next").click(function(){
+
+           $('.tournament,.AffFee,.Price1,.next,.affiliation,.wPrice,.PriceHeader').hide();
+
+           $('.header2,.save,.back').show();
+         });
+
+          $(".back").click(function(){
+
+           $('.tournament,.AffFee,.Price1,.next,.affiliation,.wPrice').show();
+
+           $('.header2,.save,.back,.AffFee').hide();
+         });
+    });
+</script>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

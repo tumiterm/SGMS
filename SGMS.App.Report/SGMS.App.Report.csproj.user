@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS.App.Report\Properties\PublishProfiles\SGMSAppReport20221231192651.pubxml</_LastSelectedProfileId>
+    <NameOfLastUsedPublishProfile>SGMSAppReport20221231192651</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="DS\ForekDS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+</Project>

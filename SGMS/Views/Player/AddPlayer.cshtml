@@ -1,0 +1,231 @@
+﻿@model SGMS.Models.Player
+@using SGMS.Enums
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .card-header, .head {
+        background-color: #5bc1ac;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+
+    .vs {
+        margin-left: 240px;
+    }
+</style>
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-futbol me-1 text-white"></i>
+            <span class="text-white">Player Registration</span>
+        </div>
+
+        <div class="card-body">
+
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active text-white" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" style="border-top-color:#5bc1ac;border-top-width:3px;background-color:#b1d5e8;border-right-color:white;border-right-width:2px;">Player Information</button>
+                    <button class="nav-link text-white" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" style="border-top-color:#080654;border-top-width:3px;background-color:#4b60c2;border-right-color:white;border-right-width:2px;">Player Contact Details</button>
+                    <button class="nav-link text-white" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" style="border-top-color:#5bc1ac;border-top-width:3px;background-color:#b1d5e8;border-right-color:white;border-right-width:2px;">Player Address Details</button>
+                    <button class="nav-link text-white" id="nav-config-tab" data-bs-toggle="tab" data-bs-target="#nav-config" type="button" role="tab" aria-controls="nav-config" aria-selected="false" style="border-top-color:#080654;border-top-width:3px;background-color:#4b60c2">Attachments</button>
+
+                </div>
+            </nav>
+            <form asp-action="AddPlayer" enctype="multipart/form-data">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="alert alert-danger mt-2 col-md-10" role="alert" style="border-bottom-color:darkred; border-bottom-width:3px;">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label asp-for="TeamId" class="control-label"></label>
+                            <select asp-for="TeamId" class="form-control TeamId" asp-items="@ViewBag.TeamId">
+                                <option selected="selected" value=""> Select Player Team</option>
+                            </select>
+                            <span asp-validation-for="Province" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Position" class="control-label"></label>
+                            <select asp-for="Position" class="form-control Position" asp-items="@Html.GetEnumSelectList<ePosition>()">
+                                <option selected="selected" value=""> Select Position</option>
+                            </select>
+                            <span asp-validation-for="Position" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="JerseyNumber" class="control-label"></label>
+                            <input asp-for="JerseyNumber" class="form-control" placeholder="Jersey No.10" />
+                            <span asp-validation-for="JerseyNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="row">
+                            <div class="form-group col-md-5">
+                                <label asp-for="PlayerName" class="control-label"></label>
+                                <input asp-for="PlayerName" class="form-control" />
+                                <span asp-validation-for="PlayerName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label asp-for="PlayerLastName" class="control-label"></label>
+                                <input asp-for="PlayerLastName" class="form-control" />
+                                <span asp-validation-for="PlayerLastName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label asp-for="IDNumber" class="control-label"></label>
+                                <input asp-for="IDNumber" class="form-control" />
+                                <span asp-validation-for="IDNumber" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label asp-for="DOB" class="control-label"></label>
+                                <input asp-for="DOB" type="date" class="form-control" />
+                                <span asp-validation-for="DOB" class="text-danger"></span>
+                            </div>
+
+
+
+                            <div class="form-group col-md-5">
+                                <label asp-for="Gender" class="control-label"></label>
+                                <select asp-for="Gender" class="form-control Gender" asp-items="@Html.GetEnumSelectList<eGender>()">
+                                    <option selected="selected" value=""> Select Gender</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="form-group col-md-5">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="AlternativePhone" class="control-label"></label>
+                            <input asp-for="AlternativePhone" class="form-control" />
+                            <span asp-validation-for="AlternativePhone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div class="form-group col-md-5">
+                            <label asp-for="StreetName" class="control-label"></label>
+                            <input asp-for="StreetName" class="form-control" />
+                            <span asp-validation-for="StreetName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="City" class="control-label"></label>
+                            <input asp-for="City" class="form-control" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="Province" class="control-label"></label>
+                            <select asp-for="Province" class="form-control" asp-items="@Html.GetEnumSelectList<eProvince>()">
+                                <option selected="selected" value=""> Select Province</option>
+                            </select>
+                            <span asp-validation-for="Province" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="PostalCode" class="control-label"></label>
+                            <input asp-for="PostalCode" class="form-control" />
+                            <span asp-validation-for="PostalCode" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-config" role="tabpanel" aria-labelledby="nav-config-tab">
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="PhotoFile" class="control-label"></label>
+                            <input asp-for="PhotoFile" class="form-control" type="file" />
+                            <span asp-validation-for="PhotoFile" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="form-group col-md-5">
+                            <label asp-for="RSAIDCopyFile" class="control-label"></label>
+                            <input asp-for="RSAIDCopyFile" type="file" class="form-control" required />
+                            <span asp-validation-for="RSAIDCopyFile" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group mt-4 col-md-10" style="background-color:whitesmoke;">
+                    <button disabled type="submit" class="btn btn-success save"><i class="fa fa-save"></i> Save</button>
+                    <button type="reset" class="btn btn-outline-warning"><i class="fa fa-undo"></i> Reset</button>
+                    <button type="button" class="btn btn-outline-danger float-end"><i class="fa fa-window-close"></i> Exit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+         $('.TeamId,.Position,.Gender').select2();
+
+         $('.ProvinceId').select2();
+
+    });
+</script>

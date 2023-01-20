@@ -1,0 +1,82 @@
+﻿@model SGMS.DTO.PlayerProfile
+
+<style>
+    .card-header {
+        background-color: #5bc1ac;
+    }
+
+    .bod {
+        border-color: black;
+    }
+</style>
+
+<div class="row mt-3">
+    <div class="col-xl-12 bod">
+        <div class="card mb-4 bod">
+            <div class="card-header text-white">
+                <i class="fas fa-user me-1"></i>
+                Player Profile
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-4 bod">
+                        <div class="card mb-4 bod">
+                            <div class="card-header text-white">
+                                <i class="fas fa-user-tie me-1"></i>
+                                Personal Details
+                            </div>
+                            <div class="card-body">
+                                <strong>Name: </strong> @ViewData["PlayerName"]<hr />
+                                <strong>ID Number: </strong> @ViewData["IDNumber"] <a href="@Url.Action("AttachmentDownload","Player",new {filename = @Model.Player.RSAIDCopy})"><i class="fa fa-download"></i> Download</a><hr />
+                                <strong>Gender: </strong> @ViewData["Gender"]<hr />
+                                <strong> Phone: </strong> @ViewData["Phone"]<hr />
+                                <strong> Email: </strong> @ViewData["Email"]<hr/>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-xl-4">
+                        <div class="card mb-4 bod">
+                            <div class="card-header text-white">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Team Details
+                            </div>
+                            <div class="card-body mb-4">
+                                <strong>Team Name: </strong> @ViewData["TeamName"]<hr />
+                                <strong>Team Coach: </strong> NO DATA<hr />
+                                <strong>Position: </strong> @ViewData["Position"]<hr />
+                                <strong>Jersey Number: </strong> @ViewData["JerseyNumber"]<hr />
+                                <strong>Description: </strong> @ViewData["Description"]<hr />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 bod">
+                        <div class="card mb-4 bod">
+                            <div class="card-header text-white">
+                                <i class="fas fa-id-card me-1"></i>
+                                Player Photo
+                            </div>
+                            <div class="card-body">
+                              <img src="~/PlayerPhoto/@Model.Player.Photo" height="310" width="415" asp-append-version="true" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

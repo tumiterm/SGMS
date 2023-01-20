@@ -1,0 +1,208 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SGMS
+build_property.RootNamespace = SGMS
+build_property.ProjectDir = C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Fortunate\Desktop\Projects\Web\SGMS\SGMS\SGMS
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Attachment/OnAddUserAttachment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0YWNobWVudFxPbkFkZFVzZXJBdHRhY2htZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Auth/OnViewUserInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxPblZpZXdVc2VySW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Auth/RetrieveUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZXRyaWV2ZVVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Auth/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Auth/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Coach/AddTeamCoach.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29hY2hcQWRkVGVhbUNvYWNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Coach/OnAddTeamCoach.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29hY2hcT25BZGRUZWFtQ29hY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Coach/RegisteredCoaches.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29hY2hcUmVnaXN0ZXJlZENvYWNoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Global/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2xvYmFsXEFjY2Vzc0RlbmllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Global/PageNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2xvYmFsXFBhZ2VOb3RGb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Global/ResultsNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2xvYmFsXFJlc3VsdHNOb3RGb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Match/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0Y2hcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Match/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0Y2hcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Match/MatchList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0Y2hcTWF0Y2hMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Match/OnScheduleMatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0Y2hcT25TY2hlZHVsZU1hdGNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Match/ScheduleMatch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0Y2hcU2NoZWR1bGVNYXRjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/Fixtures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXEZpeHR1cmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/PlayerSelection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXFBsYXllclNlbGVjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/PlayerSelection/RemoveDialog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyU2VsZWN0aW9uXFJlbW92ZURpYWxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Player/AddPlayer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyXEFkZFBsYXllci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Player/OnGetAllPlayers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyXE9uR2V0QWxsUGxheWVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Player/OnModifyPlayer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyXE9uTW9kaWZ5UGxheWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Player/OnViewPlayerProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyXE9uVmlld1BsYXllclByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Player/PlayerConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWVyXFBsYXllckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Referee/AddReferee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJlZVxBZGRSZWZlcmVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Referee/OnViewRef.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJlZVxPblZpZXdSZWYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Referee/RegisteredRefs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJlZVxSZWdpc3RlcmVkUmVmcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/SystemUser/LogSystemUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzdGVtVXNlclxMb2dTeXN0ZW1Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Team/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Team/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Team/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Team/OnAddTeam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxPbkFkZFRlYW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Team/OnTeamAddition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxPblRlYW1BZGRpdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Team/OnViewTeamPlayers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxPblZpZXdUZWFtUGxheWVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Tournament/OnGetTournaments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91cm5hbWVudFxPbkdldFRvdXJuYW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Tournament/OnModifyTournament.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91cm5hbWVudFxPbk1vZGlmeVRvdXJuYW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Tournament/OnRegisterTournament.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG91cm5hbWVudFxPblJlZ2lzdGVyVG91cm5hbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fortunate/Desktop/Projects/Web/SGMS/SGMS/SGMS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-dmj69bhe1q

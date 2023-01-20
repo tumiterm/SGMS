@@ -1,0 +1,115 @@
+﻿@model IEnumerable<SGMS.Models.Coach>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .form-control, .accordion-item {
+        border-color: black;
+    }
+
+    .acchead {
+        background-color: #2774F1
+    }
+
+    .select2-selection__rendered {
+        line-height: 31px !important;
+    }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border-color: black;
+    }
+
+    .select2-selection__arrow {
+        height: 34px !important;
+    }
+
+    .card-header, .head {
+        background-color: #5bc1ac;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .card-border, .table {
+        border-color: black;
+    }
+
+    .ref {
+        background-color: darkblue;
+    }
+
+    .vs {
+        margin-left: 240px;
+    }
+</style>
+
+<div class="col-md-4 float-end" mt-3 mb-3>
+    <a asp-action="AddTeamCoach" asp-controller="Coach" class="text-danger"><i class="fa fa-plus"></i> Add Coach</a>
+</div>
+<br />
+
+<div class="col-xl-12">
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-user me-1 text-white"></i>
+            <span class="text-white">List of Registered Coaches</span>
+        </div>
+
+        <div class="card-body">
+            <table class="table" id="datatablesSimple">
+                <thead style="background-color:#5bc1ac">
+                    <tr>
+
+                        <th class="text-white">
+                            Title
+                        </th>
+                        <th class="text-white">
+                            Name
+                        </th>
+
+                        <th class="text-white">
+                            Surname
+                        </th>
+
+                        <th class="text-white">
+                            Registered By
+                        </th>
+                        <th class="text-white">
+                            Registered On
+                        </th>
+                        <th class="text-white">
+                            Is Active
+                        </th>
+                        <th class="text-white">
+
+                        </th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>@item.Name</td>
+                            <td>@item.LastName</td>
+                            <td>@item.CreatedBy</td>
+                            <td>@item.CreatedOn</td>
+                            <td>@item.IsActive</td>
+
+                            <td>
+                                <a asp-action="OnAddTeamCoach" asp-route-CoachId="@item.CoachId" class="text-danger"><i class="fa fa-info-circle"></i> Details</a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
